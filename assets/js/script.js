@@ -24,12 +24,30 @@ var questions = [
     a: 1},
 ]
 
-var score = 0;
 
-//loop over every question object
-for (var i = 0; i < questions.length; i++) {
+var options = document.getElementsByClassName("choices")[0];
+
+var btn0 = document.createElement("button");
+btn0.innerHTML = "btn0"
+options.appendChild(btn0);
+
+
+var btn1 = document.createElement("button");
+btn1.innerHTML = "btn1"
+options.appendChild(btn1);
+
+var btn2 = document.createElement("button");
+btn2.innerHTML = "btn2"
+options.appendChild(btn2);
+
+var btn3 = document.createElement("button");
+btn3.innerHTML = "btn3"
+options.appendChild(btn3);
+
+
+for (var i = 0; i < questionsArray.length; i++) {
     //display the current question ASK
-
+var answers = confirm(questionsArray [i].q)
     //compare answers ASK
     if (
         (answer === true && questions[i].a === "t") ||
@@ -42,5 +60,27 @@ for (var i = 0; i < questions.length; i++) {
     }
 
 }
-start-btn.addEventListener("click", startQuiz)
+/*
+var questionNumber = document.createElement.questionsArray.q
 
+function questionNumber(questionsArray) {
+
+    questionNumber++,
+    questionsArray.appendChild(questionNumber);
+
+    
+}
+
+
+var score = 0;
+
+//loop over every question object
+
+
+var initials = document.querySelector('') //ASK
+
+//save initials to localStorage
+localStorage.setItem('initials', )
+
+start-btn.addEventListener("click", startQuiz)
+*/
