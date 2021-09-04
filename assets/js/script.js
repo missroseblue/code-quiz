@@ -24,57 +24,57 @@ var questions = [
     c: ["min(x,y);", " Math.min(x,y)", "Math.min(xy)", "min(xy);"],
     a: " Math.min(x,y)"},
 ]
-
+//variables
 var renderQuestions = document.querySelector(".questions")
 var options = document.querySelector(".choices")
 var questionNumber = 0
 var startBtn = document.querySelector("#start-btn")
-var results = document.createElement("H3", "center")
-var clock = document.getElementById('.countdown')
-var timeLeft = 60
+var results = document.querySelector(".results")
+var clock = document.querySelector(".timer")
 
+
+//display questions
 function createQuestion () {
     renderQuestions.innerHTML = ""
     options.innerHTML = ""
-    results.innerHTML = ""
-    var singleQuestion = document.createElement("H2", "center");   
+    var singleQuestion = document.createElement("h2", "center");   
     singleQuestion.innerHTML = questions[questionNumber].q;
     renderQuestions.appendChild(singleQuestion);
     for (var i = 0; i < questions[questionNumber].c.length; i++) {
         var btnChoices = document.createElement("button");
         btnChoices.innerHTML = questions[questionNumber].c[i]
         btnChoices.onclick = correctAnswer
-        options.appendChild(btnChoices); 
+        options.appendChild(btnChoices);
     } 
 }
-
+//validate answers and display message
 function correctAnswer () {
     //console.log("clicked")
     //console.log(this.textContent)
     //console.log(questions[questionNumber].a)
-
     if (questions[questionNumber].a === this.textContent) {
-        console.log("You're right");
-        //document.getElementById("#results").innerHTML = "You're right!" //console.log("correct")
+        results.innerHTML = "You're right!" 
     } else {
-        console.log("You're wrong")
-        //document.getElementById("#results").innerHTM = "You're wrong!" //console.log("wrong")
+        results.innerHTML = "You're wrong!"
     }
     questionNumber++;
     createQuestion()
 }
 
-function timerCallback() {
-    if (timeLeft > 1) {
-        clock.textContent = timeLeft + " seconds remaining"
-        timeLeft--;
-    } else if (timerLeft === 1) {
-        clock.textContent = timerLeft + " second remaining";
-      timerLeft--;
-    } else if (timerLeft === 0) {
-        clock.textContent = "";
-        clearInterval(timeInterval);
-    }
+function countdown() {
+    var timeLeft = 60
+    var timeInterval = setInterval(function() {
+        if (timeLeft > 1) {
+            clock.textContent = timeLeft + " seconds remaining";
+            timeLeft--;
+        } else if (timeLeft === 1) {
+            clock.textContent = timeLeft + " second remaining";
+            timeLeft--;
+        } else {
+            clock.textContent = "";
+            clearInterval(timeInterval)
+        }
+    })
 }
 
 startBtn.addEventListener("click", createQuestion)
@@ -107,38 +107,6 @@ startBtn.addEventListener("click", createQuestion)
 
 
 /*
-for (var i = 0; i < questionsArray.length; i++) {
-    //display the current question ASK
-var answers = confirm(questionsArray [i].q)
-    //compare answers ASK
-    if (
-        (answer === true && questions[i].a === "t") ||
-        (answer === false && questions[i].a === "f")
-    ) {
-        score++;
-    alert("Correct!");
-    } else {
-        alert("Wrong!")
-    }
-
-}
-/*
-var questionNumber = document.createElement.questionsArray.q
-
-function questionNumber(questionsArray) {
-
-    questionNumber++,
-    questionsArray.appendChild(questionNumber);
-
-    
-}
-
-
-var score = 0;
-
-//loop over every question object
-
-
 var initials = document.querySelector('') //ASK
 
 //save initials to localStorage
