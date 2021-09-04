@@ -1,44 +1,86 @@
 body {
-    background-color: rgb(199, 206, 192);
+    background-color: #2A2829;
+    
 }
 
 header {
+    color: #FFFFFF;
     height: 100px;
-    background-color: cadetblue;
-
+    background-color: #B9D7D9;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 
 main {
-    justify-content: center;
-    width: 50%;
-    height: 250px;
-    background-color: aqua;   
+  background-color: #2A2829;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 500px;  
 }
 
-.buttons {
+.questions {
+  height: 20%;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #FFFFFF;
+}
+
+#start-btn {
+  padding:0.3em 1.2em;
+  border-radius:3em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#7B3B3B;
+  text-align:center;
+  transition: all 0.2s;
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+ 
+.choices {
   flex-direction: column;
-    margin-top: 30px;
-    gap: 10px;
-    flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #668284;
+  height: 350px;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
  
-#btn0, #btn1, #btn2, #btn3 {
-    background-color: #01BBFF;
-    width: 250px;
-    font-size: 20px;
-    color: #fff;
-    border: 1px solid #1D3C6A;
-    margin: 10px 40px 10px 0px;
-    padding: 10px 10px;
-}
- 
-#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover {
+#btnChoices:hover {
     cursor: pointer;
     background-color: #01BBFF;
 }
  
-#btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus {
-    outline: 0;
+.Choices button:nth-child() {
+  padding:0.3em 1.2em;
+  border-radius:3em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  background-color:#7B3B3B;
+  text-align:center;
+  transition: all 0.2s;
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 @media (max-width: 690px) {

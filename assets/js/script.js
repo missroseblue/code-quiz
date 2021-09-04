@@ -11,8 +11,8 @@ var questions = [
 
 {
 	q: "Where is the correct place to insert the link to the Javascript file?",
-    c: ["The <body> section", "The <header> section", "The <footer> section", "The <head> section"],
-    a: "The <body> section"},
+    c: ["The body section", "The header section", "The footer section", "The head section"],
+    a: "The body section"},
 
 {
     q: "Which of the following will write the message “Hello DataFlair!” in an alert box?",
@@ -29,7 +29,9 @@ var renderQuestions = document.querySelector(".questions")
 var options = document.querySelector(".choices")
 var questionNumber = 0
 var startBtn = document.querySelector("#start-btn")
-var results = document.querySelector("#results")
+var results = document.createElement("H3", "center")
+var clock = document.getElementById('.countdown')
+var timeLeft = 60
 
 function createQuestion () {
     renderQuestions.innerHTML = ""
@@ -43,22 +45,36 @@ function createQuestion () {
         btnChoices.innerHTML = questions[questionNumber].c[i]
         btnChoices.onclick = correctAnswer
         options.appendChild(btnChoices); 
-        
     } 
 }
 
 function correctAnswer () {
-    console.log("clicked")
-    console.log(this.textContent)
-    console.log(questions[questionNumber].a)
+    //console.log("clicked")
+    //console.log(this.textContent)
+    //console.log(questions[questionNumber].a)
 
     if (questions[questionNumber].a === this.textContent) {
-        results.innerHTML = //console.log("correct")
+        console.log("You're right");
+        //document.getElementById("#results").innerHTML = "You're right!" //console.log("correct")
     } else {
-        console.log("wrong")
+        console.log("You're wrong")
+        //document.getElementById("#results").innerHTM = "You're wrong!" //console.log("wrong")
     }
     questionNumber++;
     createQuestion()
+}
+
+function timerCallback() {
+    if (timeLeft > 1) {
+        clock.textContent = timeLeft + " seconds remaining"
+        timeLeft--;
+    } else if (timerLeft === 1) {
+        clock.textContent = timerLeft + " second remaining";
+      timerLeft--;
+    } else if (timerLeft === 0) {
+        clock.textContent = "";
+        clearInterval(timeInterval);
+    }
 }
 
 startBtn.addEventListener("click", createQuestion)
