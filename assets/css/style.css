@@ -1,5 +1,5 @@
 body {
-    background-color: chartreuse;
+    background-color: rgb(199, 206, 192);
 }
 
 header {
@@ -9,16 +9,17 @@ header {
 }
 
 main {
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     width: 50%;
     height: 250px;
     background-color: aqua;   
 }
 
 .buttons {
+  flex-direction: column;
     margin-top: 30px;
+    gap: 10px;
+    flex-direction: column;
 }
  
 #btn0, #btn1, #btn2, #btn3 {

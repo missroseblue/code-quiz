@@ -1,50 +1,96 @@
+//question, choices and answer array
 var questions = [
 {
     q: "How do you write 'Hello World' in an alert box?", 
     c: ["msg('Hello World')", "msgBox('Hello World');", "alertBox('Hello World');", "alert('Hello World');"],
-    a: 3},
+    a: "alert('Hello World');"},
 {
 	q: "What would be the result of 3+2+'7'?",
     c: ["327", "14", "57", "12"],
-    a: 2},
+    a: "57"},
 
 {
 	q: "Where is the correct place to insert the link to the Javascript file?",
     c: ["The <body> section", "The <header> section", "The <footer> section", "The <head> section"],
-    a: 0},
+    a: "The <body> section"},
 
 {
     q: "Which of the following will write the message “Hello DataFlair!” in an alert box?",
     c: [" alertBox(“Hello DataFlair!”);", "alert(Hello DataFlair!);", "msgAlert(“Hello DataFlair!”);", "alert(“Hello DataFlair!”);"],
-    a: 3},
+    a: "alert(“Hello DataFlair!”);"},
 
 {
     q: "How do you find the minimum of x and y using JavaScript?",
     c: ["min(x,y);", " Math.min(x,y)", "Math.min(xy)", "min(xy);"],
-    a: 1},
+    a: " Math.min(x,y)"},
 ]
 
+var renderQuestions = document.querySelector(".questions")
+var options = document.querySelector(".choices")
+var questionNumber = 0
+var startBtn = document.querySelector("#start-btn")
+var results = document.querySelector("#results")
 
-var options = document.getElementsByClassName("choices")[0];
+function createQuestion () {
+    renderQuestions.innerHTML = ""
+    options.innerHTML = ""
+    results.innerHTML = ""
+    var singleQuestion = document.createElement("H2", "center");   
+    singleQuestion.innerHTML = questions[questionNumber].q;
+    renderQuestions.appendChild(singleQuestion);
+    for (var i = 0; i < questions[questionNumber].c.length; i++) {
+        var btnChoices = document.createElement("button");
+        btnChoices.innerHTML = questions[questionNumber].c[i]
+        btnChoices.onclick = correctAnswer
+        options.appendChild(btnChoices); 
+        
+    } 
+}
 
-var btn0 = document.createElement("button");
-btn0.innerHTML = "btn0"
-options.appendChild(btn0);
+function correctAnswer () {
+    console.log("clicked")
+    console.log(this.textContent)
+    console.log(questions[questionNumber].a)
+
+    if (questions[questionNumber].a === this.textContent) {
+        results.innerHTML = //console.log("correct")
+    } else {
+        console.log("wrong")
+    }
+    questionNumber++;
+    createQuestion()
+}
+
+startBtn.addEventListener("click", createQuestion)
 
 
-var btn1 = document.createElement("button");
-btn1.innerHTML = "btn1"
-options.appendChild(btn1);
-
-var btn2 = document.createElement("button");
-btn2.innerHTML = "btn2"
-options.appendChild(btn2);
-
-var btn3 = document.createElement("button");
-btn3.innerHTML = "btn3"
-options.appendChild(btn3);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 for (var i = 0; i < questionsArray.length; i++) {
     //display the current question ASK
 var answers = confirm(questionsArray [i].q)
@@ -82,5 +128,5 @@ var initials = document.querySelector('') //ASK
 //save initials to localStorage
 localStorage.setItem('initials', )
 
-start-btn.addEventListener("click", startQuiz)
+
 */
