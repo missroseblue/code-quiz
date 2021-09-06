@@ -100,7 +100,7 @@ function countdown() {
         clock.textContent = timeLeft + " second remaining";
         timeLeft--;
     } else {
-        clock.textContent = "";
+        clock.textContent = "Time is up!";
         clearInterval(timeInterval)
     }
          
@@ -112,48 +112,19 @@ startBtn.addEventListener("click", () => {
     countdown ();
 });
 
-//
-function score () {
+
+
+
+
+
+
+/*function score () {
     if (questions[questionNumber].a === this.textContent) {
-        results.innerHTML = "You're right!"
-
-}
-
-//startBtn.addEventListener("click", createQuestion)
-
-
-
-
-
-
-
-/*
-const counter = document.getElementById("counter");
-const timeGauge = document.getElementById("timeGauge");
-const progress = document.getElementById("progress");
-
-let count
-var questionTime = 10;
-var gaugeWidth = 150;
-var gaugeUnit = gaugeWidth / questionTime;
-
-function renderCounter () {
-    if (count <= questionTime) {
-        counter.innerHTML = count;
-        timeGauge.style.width = count;
-        timeGauge.style.width = count * gaugeUnit;
-        count++
+        score++;
     } else {
-        count = 0;
-    }
+
+    }       
+
 }
-*/
-
-/*
-var initials = document.querySelector('') //ASK
-
-//save initials to localStorage
-localStorage.setItem('initials', )
-
-
+}
 */
