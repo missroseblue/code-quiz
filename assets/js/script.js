@@ -21,9 +21,37 @@ var questions = [
 
 {
     q: "How do you find the minimum of x and y using JavaScript?",
-    c: ["min(x,y);", " Math.min(x,y)", "Math.min(xy)", "min(xy);"],
-    a: " Math.min(x,y)"},
+    c: ["min(x,y);", "Math.min(x,y)", "Math.min(xy)", "min(xy);"],
+    a: "Math.min(x,y)"},
+
+{
+    q: "Commonly used data types DO NOT include?",
+    c: ["Strings", "booleans", "alerts", "numbers"],
+    a: "alerts"},
+
+{
+    q: "The condition in an if/else statement is enclosed with ____",
+    c: ["Quotes", "curly brackets", "parenthesis", "square brackets"],
+    a: "parenthesis"},
+
+{
+    q: "Arrays in JavaScript can be used to store ____",
+    c: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+    a: "all of the above"},
+
+{
+    q: "String values must be enclosed within ____ when being assigned to variables.",
+    c: ["commas", "curly brackets", "quotes", "parenthesis"],
+    a: "quotes"},
+
+{
+    q: "A very useful tool used during development and debugging for priting content to the debugger is:",
+    c: ["JavaScript", "terminal/bash", "for loop", "console.log"],
+    a: "quotes"},
+
 ]
+
+
 //variables
 var renderQuestions = document.querySelector(".questions")
 var options = document.querySelector(".choices")
@@ -65,9 +93,17 @@ function correctAnswer () {
 function countdown() {
     let timeLeft = 60
     var timeInterval = setInterval(function() {
-        clock.textContent = timeLeft
+        if(timeLeft > 1) {
+        clock.textContent = timeLeft + " seconds remaining";
         timeLeft--
-        if(timeLeft < 0) clearInterval(timeInterval) 
+    } else if(timeLeft === 1) {
+        clock.textContent = timeLeft + " second remaining";
+        timeLeft--;
+    } else {
+        clock.textContent = "";
+        clearInterval(timeInterval)
+    }
+         
     }, 1000)
 }
 
@@ -76,33 +112,12 @@ startBtn.addEventListener("click", () => {
     countdown ();
 });
 
+//
+function score () {
+    if (questions[questionNumber].a === this.textContent) {
+        results.innerHTML = "You're right!"
 
-/*
-function countdown() {
-    var timeLeft = 60
-    var timeInterval = setInterval(function() {
-        if (timeLeft > 1) {
-            timer.innerHTML = timeLeft + " seconds remaining";
-            timeLeft--;
-        } else if (timeLeft === 1) {
-            timer.innerHTML = timeLeft + " second remaining";
-            timeLeft--;
-        } else {
-            timer.innerHTML = "";
-            clearInterval(timeInterval)
-        }
-    })
 }
-countdown()
-
-
-*/
-
-
-
-
-
-
 
 //startBtn.addEventListener("click", createQuestion)
 
