@@ -61,27 +61,42 @@ function correctAnswer () {
     createQuestion()
 }
 
+
+function countdown() {
+    let timeLeft = 60
+    var timeInterval = setInterval(function() {
+        clock.textContent = timeLeft
+        timeLeft--
+        if(timeLeft < 0) clearInterval(timeInterval) 
+    }, 1000)
+}
+
+startBtn.addEventListener("click", () => {
+    createQuestion ();
+    countdown ();
+});
+
+
+/*
 function countdown() {
     var timeLeft = 60
     var timeInterval = setInterval(function() {
         if (timeLeft > 1) {
-            clock.textContent = timeLeft + " seconds remaining";
+            timer.innerHTML = timeLeft + " seconds remaining";
             timeLeft--;
         } else if (timeLeft === 1) {
-            clock.textContent = timeLeft + " second remaining";
+            timer.innerHTML = timeLeft + " second remaining";
             timeLeft--;
         } else {
-            clock.textContent = "";
+            timer.innerHTML = "";
             clearInterval(timeInterval)
         }
     })
 }
-
-startBtn.addEventListener("click", createQuestion)
-
+countdown()
 
 
-
+*/
 
 
 
@@ -89,6 +104,7 @@ startBtn.addEventListener("click", createQuestion)
 
 
 
+//startBtn.addEventListener("click", createQuestion)
 
 
 
@@ -96,15 +112,27 @@ startBtn.addEventListener("click", createQuestion)
 
 
 
+/*
+const counter = document.getElementById("counter");
+const timeGauge = document.getElementById("timeGauge");
+const progress = document.getElementById("progress");
 
+let count
+var questionTime = 10;
+var gaugeWidth = 150;
+var gaugeUnit = gaugeWidth / questionTime;
 
-
-
-
-
-
-
-
+function renderCounter () {
+    if (count <= questionTime) {
+        counter.innerHTML = count;
+        timeGauge.style.width = count;
+        timeGauge.style.width = count * gaugeUnit;
+        count++
+    } else {
+        count = 0;
+    }
+}
+*/
 
 /*
 var initials = document.querySelector('') //ASK

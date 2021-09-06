@@ -1,20 +1,19 @@
 body {
-    background-color: #2A2829;
+    background-color: #ECE5CE;
     
 }
 
 header {
-    color: #FFFFFF;
-    height: 100px;
-    background-color: #B9D7D9;
     display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;  
+    height: 100px;
+    background-color: #E08E79;
     width:60%;
 }
 
 main {
-  background-color: #2A2829;
+  background-color: #F1D4AF;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -28,7 +27,7 @@ main {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  color: #FFFFFF;
+  
 }
 
 #start-btn {
@@ -39,7 +38,7 @@ main {
   font-family:'Roboto',sans-serif;
   font-weight:300;
   color:#FFFFFF;
-  background-color:#7B3B3B;
+  background-color:#774F38;
   text-align:center;
   transition: all 0.2s;
   margin-top: 30px;
@@ -48,10 +47,16 @@ main {
   margin-right: auto;
 
 }
- 
+
+.timer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .choices {
-  flex-direction: column;
-  background-color: #668284;
+  display: grid;
+  background-color: #C5E0DC;
   height: 350px;
   width: 80%;
   display: block;
@@ -59,7 +64,6 @@ main {
   margin-right: auto;
 }
 .results {
-  color: #FFFFFF;
   font-size: 30px;
   display: block;
   margin-left: auto;
@@ -78,7 +82,7 @@ main {
   text-decoration:none;
   font-family:'Roboto',sans-serif;
   font-weight:300;
-  color:#FFFFFF;
+  color:#000;
   background-color:#7B3B3B;
   text-align:center;
   transition: all 0.2s;
